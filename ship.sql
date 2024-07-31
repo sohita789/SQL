@@ -1,0 +1,23 @@
+create database ship;
+use ship;
+create table ship_info1(id int not null,name varchar(20)unique,location varchar(20),noofships int check(noofships>20),ticket_price int primary key);
+select * from ship_info1; 
+desc ship_info1;
+insert into ship_info1 values(1,'titan','bangalore',21,200);
+insert into ship_info1 values(2,'uss','mysore',30,201);
+insert into ship_info1 values(3,'german','hyderabad',25,202);
+insert into ship_info1 values(4,'hmhs britannic','delhi',35,203);
+insert into ship_info1 values(5,'cittysark','mumbai',40,204);
+select * from ship_info1;
+alter table ship_info1 add constraint id_uni unique(id);
+select * from ship_info1;
+alter table ship_info1 drop primary key;
+
+insert into ship_info1 values(6,'hms','newyork',65,210);
+insert into ship_info1 values(7,'hms beagle','chennai',55,221);
+insert into ship_info1 values(8,'santamaria','kalaburagi',25,232);
+insert into ship_info1 values(9,'hmav bountry','pune',46,243);
+insert into ship_info1 values(10,'mayflower','andhrapradesh',36,246);
+alter table ship_info1 add constraint primary key (ticket_price);
+alter table ship_info1 drop primary key;
+select * from ship_info1;

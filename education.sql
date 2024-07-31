@@ -1,0 +1,21 @@
+create database education ;
+use education;
+create table education_info1(id int not null,name varchar(20)unique,location varchar(20),fees int check(fees>10000),seat_id int primary key);
+select * from education_info1; 
+desc education_info1;
+insert into education_info1 values(1,'ramaiyha','mysore',200000,300);
+insert into education_info1 values(2,'reva university','chikkmangaluru',300000,400);
+insert into education_info1 values(3,'acharya','banglore',250000,350);
+insert into education_info1 values(4,'alvas','chikkmanglore',100000,200);
+insert into education_info1 values(5,'godutai','kalaburgi',80000,150);
+select * from education_info1;
+alter table education_info1 add constraint id_uni unique(id);
+select * from education_info1;
+alter table education_info1 drop primary key;
+
+insert into education_info1 values(6,'appa','gulbarga',95000,210);
+insert into education_info1 values(7,'SBuniversity','gulbarga',45000,225);
+insert into education_info1 values(9,'divine','karnataka',86000,120);
+insert into education_info1 values(10,'narayana','andhrapradesh',56000,270);
+alter table education_info1 add constraint primary key (seat_id);
+alter table education_info1 drop primary key;

@@ -1,0 +1,37 @@
+create database restaurant;
+use restaurant;
+create table restaurant_info1(id int,name varchar(30),recipes varchar(30),recipes_price int,location varchar(30),created_at timestamp);
+select * from restaurant_info1;
+insert into restaurant_info1 values(1,'atharva hotel','panner masala',160,'ramMandir','2024-08-02 10-02-30');
+insert into restaurant_info1 values(2,'venkatgiri','kajukurma',180,'jewargi colony','2024-08-01 09-02-30');
+insert into restaurant_info1 values(3,'crystal palace','gobbi65',120,'kotnoor road','2024-08-02 11-02-20');
+insert into restaurant_info1 values(4,'JCB','icecream',100,'timmapur circle','2024-08-03 12-02-30');
+insert into restaurant_info1 values(5,'balaji','jamun',199,'super market','2024-07-02 10-03-30');
+insert into restaurant_info1 values(6,'kamat hotel','tandooriRoti',110,'vidyanagar','2024-08-02 10-02-20');
+insert into restaurant_info1 values(7,'atithi','jeera rice','80','bhasyam circle','2023-08-02 10-02-30');
+insert into restaurant_info1 values(8,'peak land','pulavo',150,'bigbazar','2024-06-02 10-02-30');
+insert into restaurant_info1 values(9,'kababish','allubath',160,'rangmandir','2024-05-02 10-02-30');
+insert into restaurant_info1 values(10,'nabi empire','masala rice',99,'oja layout','2024-08-02 11-02-30');
+insert into restaurant_info1 values(11,'sapthagiri','allu bhuji',120,'gulbarga','2024-08-02 12-02-30');
+insert into restaurant_info1 values(12,'VKG','rasgoola',60,'biddapur colony','2024-08-02 10-02-25');
+insert into restaurant_info1 values(13,'biryani wala','biryani',170,'kesratgi','2024-07-03 10-02-30');
+insert into restaurant_info1 values(14,'taj hotel','tea',85,'kharge','2024-08-07 10-02-25');
+insert into restaurant_info1 values(15,'pallavi hotel','cold coffee',160,'nalanda','2024-03-02 10-02-30');
+insert into restaurant_info1 values(16,'noor hotel','masalpuri',65,'rajajinagar','2024-04-02 10-02-30');
+insert into restaurant_info1 values(17,'pizza hut','pizza',299,'max mall','2024-08-01 12-03-30');
+insert into restaurant_info1 values(18,'iyanagar hotel','mysorePak',90,'near busstand','2024-05-04 10-07-30');
+insert into restaurant_info1 values(19,'anand hotel','masala dosa',60,'msk mill','2024-08-02 10-12-40');
+insert into restaurant_info1 values(20,'goa hotel','idli wada',45,'sb temple road','2024-03-20 11-02-30');
+select * from restaurant_info1;
+select count(*) as recipes_name,recipes_price from restaurant_info1 group by location;
+select count(*),recipes_price from restaurant_info1 group by recipes_price;
+select max(recipes_price) as max_price,location from restaurant_info1 group by location;
+select avg(recipes_price) as avg_price,recipes from restaurant_info1 group by recipes;
+select sum(recipes_price) as sum_price,recipes from restaurant_info1 group by recipes having recipes>20;
+select * from restaurant_info1;
+update restaurant_info set recipes=null where id=6;
+select coalesce(null,null,3);
+select ifnull(null,3,5);
+select coalesce(name,location) from restaurant_info;
+
+
